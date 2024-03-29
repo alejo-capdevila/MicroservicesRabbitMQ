@@ -5,29 +5,32 @@ using MicroRabbit.Domain.Core.Bus;
 using MicroRabbit.Domain.Core.Commands;
 using MicroRabbit.Domain.Core.Events;
 using RabbitMQ.Client;
+using Microsoft.Extensions.Options;
 
 namespace MicroRabbit.Infra.Bus
 {
     public sealed class RabbitMQBus : IEventBus
     {
+        private readonly RabbitMQSettings _settings;
         private readonly IMediator _mediator;
         private readonly Dictionary<string, List<Type>> _handlers;
         private readonly List<Type> _eventTypes;
 
-        public RabbitMQBus (IMediator mediator)
+        public RabbitMQBus (IMediator mediator, IOptions<RabbitMQSettings> settings)
         {
             _mediator = mediator;
             _handlers = new Dictionary<string, List<Type>>();
             _eventTypes = new List<Type>();
+            _settings = settings.Value;
         }
 
         public void Publish<T>(T @event) where T : Event
         {
             var factory = new ConnectionFactory()
             {
-                HostName = "localhost",
-                UserName = "alejo",
-                Password = "15689ale"
+                HostName = _settings.HostName,
+                UserName = _settings.Username,
+                Password = _settings.Password
             };
 
             using (var connection = factory.CreateConnection())
