@@ -7,7 +7,7 @@ namespace MicroRabbit.Domain.Core.Events
     {
         public string MessageType { get; protected set; }
 
-        protected Message(string messageType)
+        protected Message()
         {
             MessageType = GetType().Name;
         }

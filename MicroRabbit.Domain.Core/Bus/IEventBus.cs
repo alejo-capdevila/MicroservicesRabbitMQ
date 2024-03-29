@@ -1,4 +1,7 @@
-﻿namespace MicroRabbit.Domain.Core.Bus
+﻿using MicroRabbit.Domain.Core.Events;
+using MicroRabbit.Domain.Core.Commands;
+
+namespace MicroRabbit.Domain.Core.Bus
 {
     public interface IEventBus
     {
