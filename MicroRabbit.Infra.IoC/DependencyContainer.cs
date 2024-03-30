@@ -1,4 +1,6 @@
-﻿using MicroRabbit.BakingApplication.Interfaces;
+﻿using System.Reflection;
+using MediatR;
+using MicroRabbit.BakingApplication.Interfaces;
 using MicroRabbit.BakingApplication.Services;
 using MicroRabbit.Banking.Data.Context;
 using MicroRabbit.Banking.Data.Repository;
@@ -14,6 +16,9 @@ namespace MicroRabbit.Infra.IoC
     {
         public static void RegisterServices(IServiceCollection services, IConfiguration configuration)
         {
+            //MediaTr Mediator
+            services.AddMediatR(Assembly.GetExecutingAssembly());
+
             //Domain Bus
             services.AddTransient<IEventBus, RabbitMQBus>();
             services.Configure<RabbitMQSettings>(c => configuration.GetSection("RabbitMQSettings"));
