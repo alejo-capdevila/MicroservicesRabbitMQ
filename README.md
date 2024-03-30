@@ -5,4 +5,6 @@ To login to the docker container using MSQLS Management Studio use : 127.0.0.1\{
 
 EF cmds
 Add-Migration "Initial Migration" -Context BankingDbContext => creates migration
+
+
 Update-Database BankingDbContext = > runs migration
