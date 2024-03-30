@@ -1,4 +1,5 @@
 ﻿using MicroRabbit.BakingApplication.Interfaces;
+using MicroRabbit.BakingApplication.Models;
 using MicroRabbit.Banking.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
