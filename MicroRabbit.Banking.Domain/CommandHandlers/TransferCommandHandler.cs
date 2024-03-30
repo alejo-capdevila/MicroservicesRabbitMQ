@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using MicroRabbit.Banking.Domain.Commands;
 using MicroRabbit.Banking.Domain.Events;
 using MicroRabbit.Domain.Core.Bus;
