@@ -17,7 +17,7 @@ namespace MicroRabbit.Infra.IoC
         public static void RegisterServices(IServiceCollection services, IConfiguration configuration)
         {
             //MediaTr Mediator
-            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
             //Domain Bus
             services.AddTransient<IEventBus, RabbitMQBus>();
