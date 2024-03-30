@@ -4,7 +4,7 @@
     {
         public DateTime Timestamp { get; protected set; }
 
-        protected Event() 
+        protected Event()
         {
             Timestamp = DateTime.Now;
         }

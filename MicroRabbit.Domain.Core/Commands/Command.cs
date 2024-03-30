@@ -9,6 +9,6 @@ namespace MicroRabbit.Domain.Core.Commands
         protected Command()
         {
             Timestamp = DateTime.Now;
-        }     
+        }
     }
 }

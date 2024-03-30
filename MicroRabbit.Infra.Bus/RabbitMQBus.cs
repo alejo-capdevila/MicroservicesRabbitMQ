@@ -1,12 +1,12 @@
-﻿using System.Text;
-using Newtonsoft.Json;
-using MediatR;
+﻿using MediatR;
 using MicroRabbit.Domain.Core.Bus;
 using MicroRabbit.Domain.Core.Commands;
 using MicroRabbit.Domain.Core.Events;
-using RabbitMQ.Client;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
+using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using System.Text;
 
 namespace MicroRabbit.Infra.Bus
 {
@@ -17,7 +17,7 @@ namespace MicroRabbit.Infra.Bus
         private readonly Dictionary<string, List<Type>> _handlers;
         private readonly List<Type> _eventTypes;
 
-        public RabbitMQBus (IMediator mediator, IOptions<RabbitMQSettings> settings)
+        public RabbitMQBus(IMediator mediator, IOptions<RabbitMQSettings> settings)
         {
             _mediator = mediator;
             _handlers = new Dictionary<string, List<Type>>();
@@ -44,10 +44,10 @@ namespace MicroRabbit.Infra.Bus
                 var message = JsonConvert.SerializeObject(@event);
                 var body = Encoding.UTF8.GetBytes(message);
 
-                channel.BasicPublish("",eventName, null, body);
+                channel.BasicPublish("", eventName, null, body);
 
             }
-        
+
         }
 
         public Task SendCommand<T>(T command) where T : Command
@@ -105,7 +105,7 @@ namespace MicroRabbit.Infra.Bus
 
             consumer.Received += Consumer_Received;
 
-            channel.BasicConsume(eventName,true, consumer);
+            channel.BasicConsume(eventName, true, consumer);
         }
 
         private async Task Consumer_Received(object sender, BasicDeliverEventArgs e)
@@ -116,7 +116,7 @@ namespace MicroRabbit.Infra.Bus
             {
                 await ProcessEvent(eventName, message).ConfigureAwait(false);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
 
             }
