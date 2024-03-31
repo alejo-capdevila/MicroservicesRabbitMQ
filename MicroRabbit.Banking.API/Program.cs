@@ -42,6 +42,64 @@ builder.Services.AddCors(options =>
 });
 
 
+#region Plantillas de Configuración CORS
+
+// Configuración CORS: Permitir orígenes, métodos y encabezados específicos
+/*
+options.AddPolicy("PoliticaCORS", builder =>
+    builder.WithOrigins("http://ejemplo.com", "http://otro.com")
+        .WithMethods("GET", "POST", "PUT", "DELETE")
+        .WithHeaders("Autorización", "Content-Type")
+);
+*/
+
+// Configuración CORS: Permitir cualquier origen, pero métodos y encabezados específicos
+/*
+options.AddPolicy("PoliticaCORS", builder =>
+    builder.AllowAnyOrigin()
+        .WithMethods("GET", "POST")
+        .WithHeaders("Content-Type")
+);
+*/
+
+// Configuración CORS: Permitir credenciales y orígenes específicos
+/*
+options.AddPolicy("PoliticaCORS", builder =>
+    builder.WithOrigins("http://ejemplo.com")
+        .AllowCredentials()
+);
+*/
+
+// Configuración CORS: Permitir cualquier origen, método y encabezado (no recomendado para producción)
+/*
+options.AddPolicy("PoliticaCORS", builder =>
+    builder.AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+);
+*/
+
+// Configuración CORS: Permitir múltiples orígenes usando patrones
+/*
+options.AddPolicy("PoliticaCORS", builder =>
+    builder.SetIsOriginAllowedToAllowWildcardSubdomains()
+        .WithOrigins("http://*.ejemplo.com", "http://*.otro.com")
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+);
+*/
+
+// Configuración CORS: Permitir orígenes específicos, pero con un encabezado expuesto específico
+/*
+options.AddPolicy("PoliticaCORS", builder =>
+    builder.WithOrigins("http://ejemplo.com")
+        .WithExposedHeaders("Encabezado-Custom")
+);
+*/
+
+#endregion
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
