@@ -7,4 +7,4 @@ EF cmds
 Add-Migration "Initial Migration" -Context BankingDbContext => creates migration
 
 
-Update-Database BankingDbContext = > runs migration
+Update-Database -Context {Entity}DbContext = > runs migration
