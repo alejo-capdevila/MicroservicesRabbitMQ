@@ -11,6 +11,9 @@ using MicroRabbit.Infra.Bus;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using MicroRabbit.Transfer.Application.Interfaces;
+using MicroRabbit.Transfer.Data.Context;
+using MicroRabbit.Transfer.Domain.Interfaces;
 
 namespace MicroRabbit.Infra.IoC
 {
@@ -26,13 +29,15 @@ namespace MicroRabbit.Infra.IoC
             //Domain Bus
             services.AddTransient<IEventBus, RabbitMQBus>();
 
-
             //Application Services
             services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<ITransferService, ITransferService>();
 
             //Data
             services.AddTransient<IAccountRepository, AccountRepository>();
+            services.AddTransient<ITransferRepository, ITransferRepository>();
             services.AddTransient<BankingDbContext>();
+            services.AddTransient<TransferDbContext>();
 
             return services;
         }
