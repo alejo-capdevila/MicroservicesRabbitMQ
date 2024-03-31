@@ -1,4 +1,10 @@
+using MicroRabbit.Infra.Bus;
+using MicroRabbit.Infra.IoC;
+using MicroRabbit.Transfer.Application.Interfaces;
+using MicroRabbit.Transfer.Application.Services;
 using MicroRabbit.Transfer.Data.Context;
+using MicroRabbit.Transfer.Data.Repository;
+using MicroRabbit.Transfer.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,8 +21,12 @@ builder.Services.AddDbContext<TransferDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("TransferDBConnection"));
 });
 
-//builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("RabbitMQSettings"));
-//builder.Services.RegisterServices(builder.Configuration);
+builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("RabbitMQSettings"));
+builder.Services.RegisterServices(builder.Configuration);
+
+builder.Services.AddTransient<ITransferService, TransferService>();
+builder.Services.AddTransient<ITransferRepository, TransferRepository>();
+builder.Services.AddTransient<TransferDbContext>();
 
 builder.Services.AddCors(options =>
 {

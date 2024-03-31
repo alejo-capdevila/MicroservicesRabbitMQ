@@ -9,12 +9,12 @@
     }
   },
   "profiles": {
-    "MicroRabbit.Transfer.Api": {
+    "MicroRabbit.Transfer.API": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5061",
+      "applicationUrl": "http://localhost:8080",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
