@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <h1>¡Bienvenido a la Mini App Bancaria!</h1>
+    <h1>¡Bienvenido a esta mini implementacion de microservicios en ASP.NET y RabbitMQ</h1>
     <p>Esta aplicación está diseñada como un ejemplo de una implementación basica de microservicios con un publisher y un consumer. En este caso hipotetico es una mini-app bancaria. La misma corre en .NET Core 6 utilizando RabbitMQ para la comunicación entre dos microservicios: Banking y Transfer.</p>
     <h2>Características Principales</h2>
     <h3>Implementación de dos microservicios: Banking y Transfer.</h3>
