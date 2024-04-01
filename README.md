@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>¡Bienvenido a la Mini App Bancaria!</h1>
-    <p>Esta aplicación está diseñada como un ejemplo de una implementación de microservicios con un publisher y un consumer. En este caso hipotetico es una mini-app bancaria. La misma corre en .NET Core 6 utilizando RabbitMQ para la comunicación entre dos microservicios: Banking y Transfer.</p>
+    <p>Esta aplicación está diseñada como un ejemplo de una implementación basica de microservicios con un publisher y un consumer. En este caso hipotetico es una mini-app bancaria. La misma corre en .NET Core 6 utilizando RabbitMQ para la comunicación entre dos microservicios: Banking y Transfer.</p>
     <h2>Características Principales</h2>
     <h3>Implementación de dos microservicios: Banking y Transfer.</h3>
     <img src="https://github.com/alejo-capdevila/MicroservicesRabbitMQ/assets/72323676/2fcdd2b5-5bbc-4020-89a3-172ddb0b1de5" alt="Microservicios">
