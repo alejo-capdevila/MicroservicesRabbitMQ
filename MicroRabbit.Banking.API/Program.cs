@@ -43,7 +43,7 @@ builder.Services.AddCors(options =>
 
 
 #region Plantillas de Configuración CORS
-
+/*
 // Configuración CORS: Permitir orígenes, métodos y encabezados específicos
 
 //options.AddPolicy("CorsPolicy", builder =>
@@ -95,7 +95,7 @@ builder.Services.AddCors(options =>
 //    builder.WithOrigins("http://ejemplo.com")
 //        .WithExposedHeaders("Encabezado-Custom")
 //);
-
+*/
 
 #endregion
 
