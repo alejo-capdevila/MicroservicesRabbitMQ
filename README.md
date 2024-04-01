@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini App Bancaria - .NET Core 6</title>
+    <title> Mini App Bancaria - .NET Core 6 </title>
 </head>
 <body>
     <h1>¡Bienvenido a la Mini App Bancaria!</h1>
