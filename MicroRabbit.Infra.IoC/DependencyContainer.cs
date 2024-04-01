@@ -4,6 +4,7 @@ using MicroRabbit.Infra.Bus;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using Microsoft.Extensions.Options;
 
 namespace MicroRabbit.Infra.IoC
 {
@@ -16,7 +17,12 @@ namespace MicroRabbit.Infra.IoC
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
             //Domain Bus
-            services.AddTransient<IEventBus, RabbitMQBus>();
+            services.AddSingleton<IEventBus, RabbitMQBus>(sp =>
+                {
+                    var scopeFactory = sp.GetRequiredService<IServiceScopeFactory>();
+                    var optionsFactory = sp.GetService<IOptions<RabbitMQSettings>>();
+                    return new RabbitMQBus(sp.GetService<IMediator>(), scopeFactory, optionsFactory);
+                });
 
             return services;
         }
