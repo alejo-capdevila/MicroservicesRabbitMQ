@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        img {
+            display: block;
+            margin: 0 auto; /* Esto centra la imagen horizontalmente */
+        }
+    </style>
 </head>
 <body>
     <h1>¡Bienvenido a esta mini implementacion de microservicios en ASP.NET y RabbitMQ</h1>
@@ -13,13 +19,13 @@
     <h3>Uso de RabbitMQ para la comunicación asíncrona entre los microservicios.</h3>
     <img src="https://github.com/alejo-capdevila/MicroservicesRabbitMQ/assets/72323676/166d2486-bb35-49bd-9d9c-0a6db9d00fcf" alt="RabbitMQ">
     <h3>Bases de datos independientes para cada microservicio, ambas utilizando SQL Server.</h3>
-    <img src="https://github.com/alejo-capdevila/MicroservicesRabbitMQ/assets/72323676/a449bb9d-aa41-4dcc-b5c3-fa094767770a" alt="SQL Server">
     <img src="https://github.com/alejo-capdevila/MicroservicesRabbitMQ/assets/72323676/0fd03057-1f22-4778-b870-a3fec39ac362" alt="SQL Server">
     <img src="https://github.com/alejo-capdevila/MicroservicesRabbitMQ/assets/72323676/c6c7ce6f-ee88-4967-83cc-5d8bade4b5f1" alt="SQL Server">
     <h3>Las bases de datos y RabbitMQ se ejecutan en contenedores Docker para facilitar el despliegue y la gestión.</h3>
     <img src="https://github.com/alejo-capdevila/MicroservicesRabbitMQ/assets/72323676/17a1b9fe-5a07-4bd2-b456-2a0a8e174516" alt="Docker">
     <h3>Utiliza Entity Framework Migrations para manejar la creación y actualización de la base de datos.</h3>
-    <h3>Configuración de CORS para permitir todas las solicitudes durante el desarrollo.</h3>
+    <img src="https://github.com/alejo-capdevila/MicroservicesRabbitMQ/assets/72323676/a449bb9d-aa41-4dcc-b5c3-fa094767770a" alt="SQL Server">
+    <h3>Configuración de CORS para permitir todas las solicitudes durante el desarrollo y hay un template con configuraciones mas restrictivas para usar en caso sea necesario en prod o en otro ambiente.</h3>
     <img src="https://github.com/alejo-capdevila/MicroservicesRabbitMQ/assets/72323676/0044b386-0278-497b-84cb-42169d4f3d73" alt="CORS">
     <h2>Estructura del Proyecto</h2>
     <p>Microservicio Banking: Implementa las funcionalidades bancarias principales.</p>
