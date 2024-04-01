@@ -36,10 +36,13 @@
     <h2>Estructura del Proyecto</h2>
     <p>Microservicio Banking: Implementa las funcionalidades bancarias principales.</p>
     <p>Microservicio Transfer: Maneja las transferencias entre cuentas bancarias.</p>
+    <p>MicroRabbit.Infra.Bus: Este componente contiene la infraestructura relacionada con el RabbitMQ Bus, que se utiliza para la comunicación asíncrona entre los microservicios. Aquí se configuran y gestionan las colas de mensajes, los productores y consumidores de mensajes, etc.</p>
+    <p>MicroRabbit.Infra.IoC: Esta parte implementa la inversión de control (IoC), encargándose de gestionar las dependencias dentro de la aplicación. Aquí se configuran los contenedores de IoC y se resuelven las dependencias entre los distintos componentes del sistema.</p>
     <p>Proyectos Data: Contienen los DbContexts y migrations para las bases de datos de cada microservicio.</p>
     <h2>Próximos Pasos</h2>
     <ul>
         <li>Implementar la autenticación JWT para validar credenciales en los endpoints.</li>
+        <li>Agregar mas funcionalidades a los servicios</li>
         <li>Agregar un frontend para interactuar con la aplicación de manera más amigable.</li>
     </ul>
     <h2>Configuración</h2>
