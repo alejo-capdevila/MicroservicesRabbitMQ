@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MicroRabbit.JWT.Data\MicroRabbit.JWT.Data.csproj" />
+    <ProjectReference Include="..\MicroRabbit.JWT.Domain\MicroRabbit.JWT.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
