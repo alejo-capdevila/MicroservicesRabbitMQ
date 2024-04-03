@@ -23,7 +23,7 @@
     </p>
     <h3>Las bases de datos y RabbitMQ se ejecutan en contenedores Docker para facilitar el despliegue y la gestión.</h3>
     <p align="center">
-        <img src="https://github.com/alejo-capdevila/MicroservicesRabbitMQ/assets/72323676/17a1b9fe-5a07-4bd2-b456-2a0a8e174516" alt="Docker">
+<img src="https://github.com/alejo-capdevila/MicroservicesRabbitMQ/assets/72323676/8116cb9a-8037-40b3-94cf-c96cc8b46da1">
     </p>
     <h3>Utiliza Entity Framework Migrations para manejar la creación y actualización de la base de datos.</h3>
     <p align="center">
@@ -46,20 +46,30 @@
         <li>Agregar un frontend para interactuar con la aplicación de manera más amigable.</li>
     </ul>
     <h2>Configuración</h2>
-    <p>Para levantar este repositorio tenes que:</p>
+    <p>Para levantar este repositorio tienes que:</p>
     <ul>
-        <li>Clonarlo, abrirlo en visual Studio.</li>
-        <li>Tener levantados los dos containers necesarios y asegurarte de que las bases tengan las tablas necesarias (correr los migrations).</li>
-        <li>Asegurarte de que los appsettings de las APIs tengan toda la informacion necesaria (datasource, credenciales, usuario de rabbit, etc).</li>
+        <li>Clonarlo y abrirlo en Visual Studio.</li>
+        <li>Asegurarte de tener Docker y Docker Compose instalados en tu sistema.</li>
+        <li>Ejecutar el siguiente comando en la terminal dentro del directorio del repositorio:</li>
+        ```bash
+docker-compose up -d
     </ul>
     <h2>Comandos útiles y recomendaciones</h2>
     <p>Levantar una instancia de SQL Server en el puerto 1433:</p>
     <code>docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD={TuPassword}" -p 1433:1433 --name "{container_name}" -d mcr.microsoft.com/mssql/server</code>
-    <p>Para conectarte a la base desde el MSQLS Management Studio redacta de esta manera la direccion : 127.0.0.1\{container_name},1433</p>
+    <p>Para conectarte a la base desde el MSQLS Management Studio redacta de esta manera la direccion : 127.0.0.1\{container_name},1433. Por defecto el nombre del container va a ser sqlserver-1 asi que para conectarte usarias <code>127.0.0.1\sqlserver-1,1433</code></p>
     <img src="https://github.com/alejo-capdevila/MicroservicesRabbitMQ/assets/72323676/ad11464b-e10e-4bdf-be92-7b4ee6706a58" alt="MSQLS Management Studio">
-    <h3>Entity Framework Commands</h3>
+    <h3>Entity Framework Useful Commands</h3>
     <code>Add-Migration "Initial Migration" -Context BankingDbContext</code> => crea migration<br>
     <code>Update-Database -Context {Entity}DbContext</code> => corre migration
+    <h3>RabbitMQ Useful Commands</h3>
+    <p>Para ingresar a RabbitMQ Management, abre tu navegador web y accede a:</p>
+    <code>http://localhost:15672</code>
+    <p>Las credenciales por defecto son:</p>
+    <ul>
+        <li>Usuario: guest</li>
+        <li>Contraseña: guest</li>
+    </ul>
     <h2>Uso del Repositorio</h2>
     <p>Este repositorio es público y está disponible para que cualquiera lo utilice con cualquier propósito. No es necesario dar crédito, pero siempre es bien recibido saber si este proyecto te fue útil.</p>
     <p>Si decides utilizar este proyecto o parte de él en tus propios proyectos, ¡me encantaría saber si te fue útil!</p>
